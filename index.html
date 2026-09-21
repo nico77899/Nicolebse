@@ -288,16 +288,6 @@ svg.chart text{font-size:10px;fill:var(--sub);}
           <div class="kpi"><div class="k">首日破发率</div><div class="v" data-sp-bindable="database" data-sp-database-id="s2zac9G7JURTgQJ4ev5Nxv" id="cb-break">–</div><div class="s">收盘低于面值100元</div></div>
           <div class="kpi"><div class="k">待申购转债</div><div class="v" data-sp-bindable="database" data-sp-database-id="s2zac9G7JURTgQJ4ev5Nxv" id="cb-pending">–</div><div class="s">含待上市</div></div>
         </div>
-        <div class="card"><h3>待发 / 待上市转债</h3><div id="cb-pending-table"></div></div>
-        <div class="card">
-          <h3>转债列表 <span class="hint">2024 ~ 2026 已上市共 144 只 · 转股价值 &lt; 85 为高估风险（绿色高亮）· 点击表头排序 / 点击行查看详情</span></h3>
-          <div class="toolbar">
-            <select id="cb-status-filter"><option value>全部状态</option><option>待上市</option><option>已上市</option></select>
-            <select id="cb-advice-filter"><option value>全部建议</option><option>积极申购</option><option>谨慎申购</option><option>建议放弃</option><option>暂无</option></select>
-            <input id="cb-search" placeholder="搜索转债/正股" type="text" style="width:160px">
-          </div>
-          <div class="table-wrap" id="cb-table"></div>
-        </div>
         <div class="card">
           <h3>年度汇总 <span class="hint" id="cby-hint">上市只数 / 发行规模 / 平均中签率 / 平均首日涨幅 / 破发数量</span></h3>
           <div class="desc" id="cby-d">—</div>
@@ -311,6 +301,17 @@ svg.chart text{font-size:10px;fill:var(--sub);}
           <div class="card"><h3>首日涨幅分布</h3><div id="cb-hist"></div></div>
           <div class="card"><h3>单签收益 TOP 15</h3><div id="cb-top"></div></div>
         </div>
+        <div class="card"><h3>待发 / 待上市转债</h3><div id="cb-pending-table"></div></div>
+        <div class="card">
+          <h3>转债列表 <span class="hint">2024 ~ 2026 已上市共 144 只 · 转股价值 &lt; 85 为高估风险（绿色高亮）· 点击表头排序 / 点击行查看详情</span></h3>
+          <div class="toolbar">
+            <select id="cb-status-filter"><option value>全部状态</option><option>待上市</option><option>已上市</option></select>
+            <select id="cb-advice-filter"><option value>全部建议</option><option>积极申购</option><option>谨慎申购</option><option>建议放弃</option><option>暂无</option></select>
+            <input id="cb-search" placeholder="搜索转债/正股" type="text" style="width:160px">
+          </div>
+          <div class="table-wrap" id="cb-table"></div>
+        </div>
+        
       </section>
 
       <!-- ============ 北交所 ============ -->
