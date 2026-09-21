@@ -198,6 +198,10 @@ svg.chart text{font-size:10px;fill:var(--sub);}
 .seg button.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:bold;}
 .sec-h{font-size:15px;font-weight:bold;color:var(--text);margin:4px 0 12px;letter-spacing:.3px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
 .sec-h .hint{font-size:11px;color:var(--dim);font-weight:normal;}
+/* 原版「北交所打新工作台」外链入口：带 ↗ 标记，视觉上区别于页内导航 */
+.nav a.nav-ext span::after{content:"↗";font-size:9px;margin-left:5px;opacity:.5;}
+.nav a.nav-ext:hover span::after{opacity:.95;}
+.nav a.nav-ext:hover{color:var(--accent);}
 </style>
 </head>
 <body>
@@ -215,6 +219,7 @@ svg.chart text{font-size:10px;fill:var(--sub);}
       <a data-nav="cb"><i class="ic">债</i><span>可转债打新</span></a>
       <div class="group">北交所</div>
       <a data-nav="bse"><i class="ic">北</i><span>北交所打新</span></a>
+      <a class="nav-ext" href="beijiaosuo.html" target="_blank" rel="noopener" title="在新标签页打开原版北交所打新工作台"><i class="ic">原</i><span>北交所打新 · 原版</span></a>
       <div class="group">中心</div>
       <div class="group">研究</div>
       <a data-nav="trend"><i class="ic">势</i><span>市场趋势</span></a>
@@ -1620,6 +1625,7 @@ var BSE_LISTED = {"920992":"中科美菱","920985":"海泰新能","920982":"锦�
     alerts: ['提醒中心', '申购预告 · 缴款 · 上市提醒']
   };
   function nav(page) {
+    if (!page) return;
     var pages = document.querySelectorAll('.page');
     for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
     var links = document.querySelectorAll('.nav a');
@@ -2112,6 +2118,17 @@ var BSE_LISTED = {"920992":"中科美菱","920985":"海泰新能","920982":"锦�
         var p = a.getAttribute('data-nav');
         if (p !== 'trend' && p !== 'rules' && p !== 'hist') return;
         a.onclick = function () { nav(p); };
+      })(links[i]);
+    }
+  })();
+
+  /* =================== 原版「北交所打新工作台」独立入口 ===================
+     外链入口，不参与本页导航切换：重置基础绑定，走原生 href 在新标签页打开。 */
+  (function bindBseOrigEntry() {
+    var links = document.querySelectorAll('.nav a.nav-ext');
+    for (var i = 0; i < links.length; i++) {
+      (function (a) {
+        a.onclick = function () { return true; };
       })(links[i]);
     }
   })();
