@@ -265,7 +265,7 @@ const kpiDef = [
   {num:kpi.need26_med, unit:'万', lab:'2026 必中资金中位', note:'单只最高 1217 万（珈凯）'},
   {num:kpi.over26+' / '+kpi.n26, unit:'只', lab:'2026 顶格难中100股', note:'必中资金已超申购上限', cls:'warn'},
   {num:kpi.ret26_avg.toLocaleString(), unit:'元', lab:'2026 百股收益均值', note:'首日均价口径 · 连续3年正收益', cls:'ok'},
-  {num:kpi.n26, unit:'只', lab:'2026 已发行（至 2026/10/13）', note:'超 2025 全年 2 倍 · 提速中', cls:'ok'},
+  {num:kpi.n26, unit:'只', lab:'2026 已发行（至 2026/10/09）', note:'超 2025 全年 2 倍 · 提速中', cls:'ok'},
 ];
 document.getElementById('kpis').innerHTML = kpiDef.map(k=>`<div class="card kpi"><div class="num">${k.num}<small>${k.unit}</small></div><div class="lab">${k.lab}</div><div class="note ${k.cls||''}">${k.note}</div></div>`).join('');
 
